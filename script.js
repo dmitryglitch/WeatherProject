@@ -38,7 +38,7 @@ function getCurrentTemp(url) {
 
     const xhrTemp = new XMLHttpRequest();
 
-    xhrTemp.open('GET', url, true);
+    xhrTemp.open('GET', url, true);wwq
     xhrTemp.send();
     xhrTemp.onload = function () {
         if (xhrTemp.readyState === 4) {
