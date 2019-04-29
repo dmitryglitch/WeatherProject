@@ -12,8 +12,6 @@ const currentWeatherApiUrl = "http://api.openweathermap.org/data/2.5/weather?q="
     + "&appid="
     + myApiKey;
 
-
-
 onload = function () {
 
     // получаем текущую температуру.
@@ -31,6 +29,7 @@ function onChangeCity(){
         + "&appid="
         + myApiKey;
 
+    // генерируем данные о текущей температуре
     getCurrentTemp(newApiUrl)
 }
 
