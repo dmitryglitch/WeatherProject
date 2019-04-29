@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Прогноз погоды</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="topBar">
+    <div class="topBarLogoContainer">
+        <img id="logo" src="image/logo.png" width="36" height="36">
+        <img id="logoYandex" src="image/logoYandex.png" height="30" width="70">
+    </div>
+    <div class="topBarInputContainer">
+        <select id="topBarCB" onchange="onChangeCity()">
+
+        </select>
+    </div>
+    <div class="topBarButton">
+<!--                    <input type="button" value="Exit">-->
+    </div>
+</div>
+<div class="secondaryBar">
+    <div class="secondaryBarContainer">
+        <span id="currentCity">Город:</span>
+        <span id="currentTemp">Текущая температура:</span>
+        <span id="minCurrentTemp">Минимальная температура на сегодня:</span>
+        <span id="maxCurrentTemp">Максимальная температура на сегодня:</span>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
