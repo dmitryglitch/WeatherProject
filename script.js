@@ -131,9 +131,6 @@ function getCurrentTemp(url) {
                 let json = JSON.parse(xhrTemp.responseText);
                 console.log(json);
 
-                // задаем значение текущего города
-                currentCity.innerHTML = "Погода в городе " + json.location.name.toString();
-
                 // задаем значение текущей температуры
                 currentTemp.innerHTML = json.current.temp_c.toString() + "°C";
 
@@ -195,7 +192,6 @@ function getWeatherForecast(url) {
         }
     };
 }
-
 
 // функция для получения списка городов из локального json-файла
 function getCityList(path) {

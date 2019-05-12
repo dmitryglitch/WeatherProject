@@ -110,6 +110,8 @@ body {
 .containerCurrentWeather {
     white-space: nowrap;
 
+    margin: 5px 0 0 5px;
+
     position: relative;
     padding: 20px;
 }
@@ -165,18 +167,17 @@ body {
     position: relative;
     display: block;
 
-    width: 600px;
-    margin: 10px 0 0 5px;
+    width: 100%;
+    margin: 5px 0 0 5px;
 }
 
 .ipInfoContainer {
     display: flex;
     position: relative;
-    margin: 0 5px 0 0;
     border-radius: 5px;
 
     width: 590px;
-    height: max-content;
+    height: 100%;
 
     background: #fff;
 }
@@ -184,14 +185,14 @@ body {
 .dataIpContainer {
     width: max-content;
     height: max-content;
-    margin: 33px 0 33px 30px;
+    margin: 20px 0 20px 20px;
 
 }
 
 .dataMyIpContainer {
     width: max-content;
     height: max-content;
-    margin: 67px 0 67px 20px;
+    margin: auto 0 auto 20px;
 }
 
 .myApiAddressText {
@@ -202,8 +203,8 @@ body {
 /*SPEED TESTING BLOCK*/
 .speedTesting {
     display: block;
-    width: 600px;
-    margin: 10px 0 0 5px;
+    width: 100%;
+    margin: 5px 0 0 5px;
 }
 
 .speedTestingContainer {
@@ -215,18 +216,17 @@ body {
     border-radius: 5px;
 
     width: 100%;
-    height: 180px;
+    height: 100%;
 
     background: #fff;
 }
 
 .speedTestingContainerButton {
-    margin: 67px 0 67px 20px;
-
+margin: auto 0 auto 20px;
 }
 
 .speedTestingIndicators {
-    margin: 60px 0 62px 20px;
+    margin: auto 0 auto 20px;
 
 }
 
