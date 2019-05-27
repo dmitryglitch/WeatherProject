@@ -5,129 +5,120 @@
     <title>Прогноз погоды</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css?family=Montserrat&amp;subset=cyrillic-ext" rel="stylesheet">
-    <script src="internetConnectionCheck.js" async></script>
-    <script src="script.js" async></script>
+    <script src="script.js" type="module"></script>
 </head>
-<body>
-<div class="container">
+    <body>
+        <div class="container">
 
-    <!---->
-    <div id="topBar">
-        <div class="topBarLogoContainer">
-            <img id="logo" src=image/logo.png width=36 height=36>
-        </div>
-        <div class="topBarInputContainer">
-            <select id="topBarCB">
-            </select>
-        </div>
-    </div>
-
-    <!--//-->
-
-    <div class="currentWeatherBlock">
-        <div class="containerCurrentWeather">
-            <div class="currentTempContainer">
-
-                <div class="tempContainer">
-                    <span class="currentTempSpan" id="currentTemp"></span>
+            <!---->
+            <div id="topBar">
+                <div class="topBarLogoContainer">
+                    <img id="logo" src=image/logo.png width=36 height=36>
                 </div>
-
-                <div class="iconContainer">
-                    <img class="iconCr" src="image/weather/64x64/day/113.png">
+                <div class="topBarInputContainer">
+                    <select id="topBarCB">
+                    </select>
                 </div>
             </div>
 
-            <div class="feltTempContainer">
-                <span id="feelsLikeTemp">Ощущается как:</span>
-            </div>
-
-            <div class="optionsWeather">
-                <span id="currentWind">Скорость ветра:</span>
-                <span id="currentPressure">Давление:</span>
-                <span id="currentHumidity">Влажность:</span>
-            </div>
-        </div>
-    </div>
-
-    <div class="weatherBar" id="weatherBar">
-        <div class="weatherBarContainer" id="weatherBarContainer">
-            <div class="weatherItems" id="weatherItems">
-
-            </div>
-
-        </div>
-    </div>
-
-    <div class="weatherAndSpeedTest">
-
-    </div>
-
-    <div class="containerSPTandIpT">
-
-        <div class="containerIp">
             <!--//-->
-            <div class="ip-info">
-                <span class="ipInfo">Информация по IP адресу</span>
+            <div class="currentWeatherBlock">
+                <div class="containerCurrentWeather">
+                    <div class="currentTempContainer">
+                        <div class="tempContainer">
+                            <span class="currentTempSpan" id="currentTemp"></span>
+                        </div>
+
+                        <div class="iconContainer">
+                            <img class="iconCr" src="image/weather/64x64/day/113.png">
+                        </div>
+                    </div>
+                    <div class="feltTempContainer">
+                        <span id="feelsLikeTemp">Ощущается как:</span>
+                    </div>
+
+                    <div class="optionsWeather">
+                        <span id="currentWind">Скорость ветра:</span>
+                        <span id="currentPressure">Давление:</span>
+                        <span id="currentHumidity">Влажность:</span>
+                    </div>
+                </div>
             </div>
 
-            <div class="ipInfoContainer">
-                <div class="dataMyIpContainer">
-                    <span class="myApiAddressText" style="color:#757575;"><b>Ваш IP адрес:</b></span><br>
-                    <span id="myApiAddress">0.0.0.0</span>
+            <div class="weatherBar" id="weatherBar">
+                <div class="weatherBarContainer" id="weatherBarContainer">
+                    <div class="weatherItems" id="weatherItems">
+
+                    </div>
+
                 </div>
-                <div class="dataIpContainer">
-                    <span style="color:#757575;">Имя вашего компьютера:</span>
-                    <span id="myNamePc"></span><br>
+            </div>
 
-                    <span style="color:#757575;">Название часового пояса:</span>
-                    <span id="myNameTimeZone"></span><br>
+            <!---->
+            <div class="weatherAndSpeedTest">
 
-                    <span style="color:#757575;">Ваш провайдер:</span>
-                    <span id="myProvider"></span><br>
+            </div>
 
-                    <span style="color:#757575;">Откуда вы:</span>
-                    <span id="myHabitatZone"></span><br>
+            <div class="containerSPTandIpT">
+                <div class="containerIp">
+                    <div class="ip-info">
+                        <span class="ipInfo">Информация по IP адресу</span>
+                    </div>
 
-                    <span style="color:#757575;">Долгота:</span>
-                    <span id="myLongitude"></span><br>
+                    <div class="ipInfoContainer">
+                        <div class="dataMyIpContainer">
+                            <span class="myApiAddressText" style="color:#757575;"><b>Ваш IP адрес:</b></span><br>
+                            <span id="myApiAddress">0.0.0.0</span>
+                        </div>
+                        <div class="dataIpContainer">
+                            <span style="color:#757575;">Имя вашего компьютера:</span>
+                            <span id="myNamePc"></span><br>
 
-                    <span style="color:#757575;">Широта:</span>
-                    <span id="myLatitude"></span><br>
+                            <span style="color:#757575;">Название часового пояса:</span>
+                            <span id="myNameTimeZone"></span><br>
+
+                            <span style="color:#757575;">Ваш провайдер:</span>
+                            <span id="myProvider"></span><br>
+
+                            <span style="color:#757575;">Откуда вы:</span>
+                            <span id="myHabitatZone"></span><br>
+
+                            <span style="color:#757575;">Долгота:</span>
+                            <span id="myLongitude"></span><br>
+
+                            <span style="color:#757575;">Широта:</span>
+                            <span id="myLatitude"></span><br>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="containerSp">
+                    <!--//-->
+                    <div class="speedTesting">
+                        <span id="currentSpeed">Скорость вашего интернет-соединения</span>
+                    </div>
+                    <div class="speedTestingContainer">
+                        <div class="speedTestingContainerButton">
+                            <input type="button" class="btnSpeedTest" id="btnSpeedTest" value="Измерить"
+                                   style="color: #000000;">
+                        </div>
+                        <div class="speedTestingIndicators">
+                            <div class="bpsSpeed">
+                                <span>bps:</span>
+                                <span id="spBps">0</span>
+                            </div>
+                            <div class="kbpsSpeed">
+                                <span>kbps:</span>
+                                <span id="spKbps">0 </span>
+                            </div>
+                            <div class="mbosSpeed">
+                                <span>Mbps:</span>
+                                <span id="spMbps"> 0 </span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-
-        <div class="containerSp">
-            <!--//-->
-            <div class="speedTesting">
-                <span id="currentSpeed">Скорость вашего интернет-соединения</span>
-            </div>
-            <div class="speedTestingContainer">
-                <div class="speedTestingContainerButton">
-                    <input type="button" class="btnSpeedTest" id="btnSpeedTest" value="Измерить"
-                           style="color: #000000;">
-                </div>
-                <div class="speedTestingIndicators">
-                    <div class="bpsSpeed">
-                        <span>bps:</span>
-                        <span id="spBps">0</span>
-                    </div>
-                    <div class="kbpsSpeed">
-                        <span>kbps:</span>
-                        <span id="spKbps">0 </span>
-                    </div>
-                    <div class="mbosSpeed">
-                        <span>Mbps:</span>
-                        <span id="spMbps"> 0 </span>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-    </div>
-
-
-</div>
-
-</body>
+    </body>
 </html>

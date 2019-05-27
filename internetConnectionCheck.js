@@ -1,14 +1,9 @@
 const imageAddr = "http://www.kenrockwell.com/contax/images/g2/examples/31120037-5mb.jpg";
 const downloadSize = 4995374; //bytes
 
-const btnSpeedTest = document.getElementById("btnSpeedTest");
 const spBps = document.getElementById("spBps");
 const spKbps = document.getElementById("spKbps");
 const spMbps = document.getElementById("spMbps");
-
-btnSpeedTest.onclick = function () {
-    MeasureConnectionSpeed();
-};
 
 function ShowProgressMessage(msg) {
     if (console) {
@@ -72,5 +67,6 @@ function MeasureConnectionSpeed() {
         spMbps.innerHTML = speedMbps;
     }
 }
+export {MeasureConnectionSpeed};
 
 

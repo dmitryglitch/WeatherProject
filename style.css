@@ -222,7 +222,7 @@ body {
 }
 
 .speedTestingContainerButton {
-margin: auto 0 auto 20px;
+    margin: auto 0 auto 20px;
 }
 
 .speedTestingIndicators {
@@ -263,12 +263,12 @@ margin: auto 0 auto 20px;
 }
 
 .containerSp {
-    width:100%;
+    width: 100%;
     display: flex;
     flex-direction: column;
 }
 
-.containerSPTandIpT{
+.containerSPTandIpT {
     height: max-content;
     width: 100%;
     display: flex;

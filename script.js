@@ -1,3 +1,5 @@
+import {MeasureConnectionSpeed} from './internetConnectionCheck.js';
+
 const myApiKey = "93d533f8c2c54817bbe111226193004";
 const myApiForIp = "https://json.geoiplookup.io/";
 
@@ -19,6 +21,9 @@ const weatherBarContainer = document.getElementById("weatherBarContainer");
 const currentPressure = document.getElementById("currentPressure");
 const currentHumidity = document.getElementById("currentHumidity");
 
+// SPEED TEST
+const btnSpeedTest = document.getElementById("btnSpeedTest");
+
 const citySelector = document.getElementById("topBarCB");
 
 const city = "Toyohira";
@@ -29,7 +34,6 @@ const currentWeatherApiUrl = "http://api.apixu.com/v1/current.json?"
     + "&q="
     + city;
 
-
 const forecastWeatherApiUrl = "http://api.apixu.com/v1/forecast.json?"
     + "key="
     + myApiKey
@@ -37,16 +41,19 @@ const forecastWeatherApiUrl = "http://api.apixu.com/v1/forecast.json?"
     + city
     + "&days=7";
 
-// функция срабатывающая при полной загрузки страницы
+// функция срабатывающая при полной загрузки страницы.
 onload = function () {
+
+    // получаем скорость интернет-соединения
+    MeasureConnectionSpeed();
 
     // получаем информацию по ip
     getMyIpInfo(myApiForIp);
 
-    // получаем текущую температуру.
+    // получаем текущую температуру
     getCurrentTemp(currentWeatherApiUrl);
 
-    // получаем локальный файл JSon для создания списка всех городов.
+    // получаем локальный файл JSon для создания списка всех городов
     getCityList("/WeatherProject/json/city.list.json");
 
     // получаем температуру на 7 дней
@@ -69,7 +76,7 @@ citySelector.onchange = function () {
         + citySelector.value
         + "&days=7";
 
-    // генерируем данные о текущей температуре
+    // генерируем данные о текущей температуре.
     getCurrentTemp(newCurrentWeatherApiUrl);
 
     /*
@@ -81,7 +88,12 @@ citySelector.onchange = function () {
     getWeatherForecast(newForecastWeatherApiUrl);
 };
 
-// функция для получения данных по IP
+// измекрение скорости интернет-соединения при нажатии на кнопку.
+btnSpeedTest.onclick = function () {
+    MeasureConnectionSpeed();
+};
+
+// функция для получения данных по IP.
 function getMyIpInfo(url) {
     const xhrIp = new XMLHttpRequest();
 
@@ -118,7 +130,7 @@ function getMyIpInfo(url) {
     }
 }
 
-// функция для получения данных о текущей температуре
+// функция для получения данных о текущей температуре.
 function getCurrentTemp(url) {
 
     const xhrTemp = new XMLHttpRequest();
@@ -141,7 +153,7 @@ function getCurrentTemp(url) {
                 currentPressure.innerHTML = "Давление " + json.current.pressure_mb.toString() + "мм рт. ст";
 
                 // задаем значения влажности
-                currentHumidity.innerHTML = "Влажность " + json.current.humidity.toString() + "%"
+                currentHumidity.innerHTML = "Влажность " + json.current.humidity.toString() + "%";
 
                 // задаем значений температуры как она ощущается
                 currentFeelsLikeTemp.innerText = "Ощущается как: " + json.current.feelslike_c.toString() + "°C";
@@ -155,7 +167,7 @@ function getCurrentTemp(url) {
     };
 }
 
-// функция для получения данных о температуры за 7 дней
+// функция для получения данных о температуры за 7 дней.
 function getWeatherForecast(url) {
 
     const xhrForecastTemp = new XMLHttpRequest();
@@ -182,7 +194,7 @@ function getWeatherForecast(url) {
                     newDiv.innerHTML = image
                         + "<span>Дата: </span>" + "<span><b>" + item.date + "</b></span>"
                         + "<span>Днем: </span>" + "<span><b>" + item.day.maxtemp_c + "°C" + "</b></span>"
-                        + "<span>Ночью: </span>" + "<span><b>"+ item.day.mintemp_c + "°C" + "</b></span>";
+                        + "<span>Ночью: </span>" + "<span><b>" + item.day.mintemp_c + "°C" + "</b></span>";
 
                     weatherBarContainer.appendChild(newDiv);
                 });
@@ -193,7 +205,7 @@ function getWeatherForecast(url) {
     };
 }
 
-// функция для получения списка городов из локального json-файла
+// функция для получения списка городов из локального json-файла.
 function getCityList(path) {
     const xhrCityList = new XMLHttpRequest();
 
@@ -218,7 +230,7 @@ function getCityList(path) {
     xhrCityList.send();
 }
 
-// функция для удаления всех элементов из weatherBar
+// функция для удаления всех элементов из weatherBar.
 function deleteAllElements() {
     for (let i = 0; i < 7; i++) {
         let day = document.getElementById("day" + i);
